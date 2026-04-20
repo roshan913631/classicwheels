@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Fraunces";
+    --font-body: "Lora";
+    --font-mono: "JetBrainsMono";
+    --radius: 0.25rem;
+
+    --background: 0.95 0.02 90;
+    --foreground: 0.2 0.05 40;
+    --card: 0.97 0.01 85;
+    --card-foreground: 0.2 0.05 40;
+    --popover: 0.97 0.01 85;
+    --popover-foreground: 0.2 0.05 40;
+
+    --primary: 0.58 0.15 35;
+    --primary-foreground: 0.97 0.01 85;
+
+    --secondary: 0.95 0.02 90;
+    --secondary-foreground: 0.2 0.05 40;
+    --muted: 0.75 0.02 90;
+    --muted-foreground: 0.4 0.03 35;
+
+    --accent: 0.2 0.05 40;
+    --accent-foreground: 0.97 0.01 85;
+
+    --destructive: 0.5 0.18 25;
+    --destructive-foreground: 0.97 0.01 85;
+
+    --border: 0.58 0.15 35;
+    --input: 0.9 0.02 90;
+    --ring: 0.58 0.15 35;
+
+    --chart-1: 0.58 0.15 35;
+    --chart-2: 0.52 0.18 120;
+    --chart-3: 0.75 0.02 90;
+    --chart-4: 0.2 0.05 40;
+    --chart-5: 0.65 0.1 50;
+
+    --sidebar: 0.2 0.05 40;
+    --sidebar-foreground: 0.97 0.01 85;
+    --sidebar-primary: 0.58 0.15 35;
+    --sidebar-primary-foreground: 0.97 0.01 85;
+    --sidebar-accent: 0.75 0.02 90;
+    --sidebar-accent-foreground: 0.2 0.05 40;
+    --sidebar-border: 0.58 0.15 35;
+    --sidebar-ring: 0.58 0.15 35;
+  }
+
+  .dark {
+    --background: 0.15 0.02 90;
+    --foreground: 0.92 0.01 85;
+    --card: 0.22 0.03 40;
+    --card-foreground: 0.92 0.01 85;
+    --popover: 0.25 0.03 40;
+    --popover-foreground: 0.92 0.01 85;
+
+    --primary: 0.62 0.16 36;
+    --primary-foreground: 0.15 0.02 90;
+
+    --secondary: 0.3 0.02 40;
+    --secondary-foreground: 0.85 0.01 85;
+    --muted: 0.3 0.02 40;
+    --muted-foreground: 0.65 0.01 85;
+
+    --accent: 0.75 0.02 90;
+    --accent-foreground: 0.2 0.05 40;
+
+    --destructive: 0.55 0.18 28;
+    --destructive-foreground: 0.92 0.01 85;
+
+    --border: 0.3 0.03 40;
+    --input: 0.28 0.02 40;
+    --ring: 0.62 0.16 36;
+
+    --chart-1: 0.62 0.16 36;
+    --chart-2: 0.57 0.18 122;
+    --chart-3: 0.8 0.02 90;
+    --chart-4: 0.25 0.03 40;
+    --chart-5: 0.65 0.12 52;
+
+    --sidebar: 0.2 0.05 40;
+    --sidebar-foreground: 0.92 0.01 85;
+    --sidebar-primary: 0.62 0.16 36;
+    --sidebar-primary-foreground: 0.15 0.02 90;
+    --sidebar-accent: 0.3 0.02 40;
+    --sidebar-accent-foreground: 0.85 0.01 85;
+    --sidebar-border: 0.3 0.03 40;
+    --sidebar-ring: 0.62 0.16 36;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 600 700;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 500 600;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .border-rustic {
+    @apply border-2 border-primary;
+  }
+
+  .bg-paper {
+    @apply bg-secondary;
+  }
+
+  .text-signage {
+    @apply font-display font-bold tracking-wide;
+  }
+}

@@ -1,0 +1,88 @@
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type OrderInput = 
+ record {
+   buyerEmail: text;
+   buyerName: text;
+   buyerPhone: text;
+   carId: text;
+ };
+type Order = 
+ record {
+   buyerEmail: text;
+   buyerName: text;
+   buyerPhone: text;
+   carId: text;
+   createdAt: int;
+   orderId: text;
+   orderStatus: text;
+   paymentAmount: nat;
+   updatedAt: int;
+ };
+type Inquiry = 
+ record {
+   buyerEmail: text;
+   buyerName: text;
+   buyerPhone: text;
+   carId: text;
+   createdAt: int;
+   id: text;
+   message: text;
+   status: text;
+ };
+type CarInput = 
+ record {
+   description: text;
+   imageUrls: vec text;
+   make: text;
+   mileage: nat;
+   model: text;
+   price: nat;
+   year: nat;
+ };
+type Car = 
+ record {
+   description: text;
+   id: text;
+   imageUrls: vec text;
+   make: text;
+   mileage: nat;
+   model: text;
+   price: nat;
+   year: nat;
+ };
+service : {
+  _initializeAccessControl: () -> ();
+  addCar: (car: CarInput) -> (Car);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  deleteCar: (id: text) -> (bool);
+  deleteInquiry: (id: text) -> (bool);
+  deleteOrder: (orderId: text) -> (variant {
+                                     err: text;
+                                     ok: bool;
+                                   });
+  getCallerUserRole: () -> (UserRole) query;
+  getCar: (id: text) -> (opt Car) query;
+  getCars: () -> (vec Car) query;
+  getInquiries: () -> (vec Inquiry) query;
+  getOrderById: (orderId: text) -> (opt Order) query;
+  getOrders: () -> (vec Order) query;
+  isCallerAdmin: () -> (bool) query;
+  submitInquiry: (carId: text, buyerName: text, buyerEmail: text, buyerPhone:
+   text, message: text) -> (text);
+  submitOrder: (input: OrderInput) -> (variant {
+                                         err: text;
+                                         ok: text;
+                                       });
+  updateCar: (id: text, car: CarInput) -> (bool);
+  updateInquiryStatus: (id: text, status: text) -> (bool);
+  updateOrderStatus: (orderId: text, status: text) ->
+   (variant {
+      err: text;
+      ok: bool;
+    });
+}

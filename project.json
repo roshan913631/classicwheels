@@ -1,0 +1,20 @@
+{
+  "overview": "ClassicWheels is a vintage car reselling website where users can browse classic cars, buy them with a dummy payment checkout, and sellers can list cars for sale. Admins manage orders and inquiries via a protected dashboard.",
+  "features": [
+    "Browse classic vintage car listings with search and sort",
+    "Buy Now checkout with dummy payment (simulated card)",
+    "Order confirmation with order ID",
+    "Admin dashboard with orders tab and status management",
+    "Sell a car form to list new cars instantly",
+    "Inquiry management for buyer questions"
+  ],
+  "category": "marketplace",
+  "tags": [
+    "vintage-cars",
+    "reselling",
+    "marketplace",
+    "checkout",
+    "admin-dashboard"
+  ],
+  "last_updated": "2026-04-20T03:30:09.172Z"
+}
